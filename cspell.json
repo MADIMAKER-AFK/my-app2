@@ -1,17 +1,14 @@
 {
-  "ignoreWords": [
-    "Iniciar",
-    "sesión",
-    "plataforma",
-    "Aquí",
-    "implementaremos",
-    "lógica",
-    "adelante",
-    "Intento",
+  "version": "0.2",
+  "language": "en",
+  "words": [
     "Usamos",
-    "ruta",
     "página",
-    "ahora"
+    "Agregamos",
+    "ruta"
   ],
-  "version": "0.2"
+  "ignorePaths": [
+    "node_modules/**",
+    "dist/**"
+  ]
 }

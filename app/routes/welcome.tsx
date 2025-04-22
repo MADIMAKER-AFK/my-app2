@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router";
 import wmblackcodeLong from "../welcome/wmblackcodeLong.png";
 import background from "../welcome/background.svg";
 import type { MetaFunction } from "react-router";
@@ -16,6 +17,7 @@ export default function Welcome() {
   const [usernameFocused, setUsernameFocused] = useState(false);
   const [passwordFocused, setPasswordFocused] = useState(false);
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   // Función de login con validación de campos
   const handleLogin = () => {
@@ -33,8 +35,9 @@ export default function Welcome() {
     // Si llegamos aquí, ambos campos están completos
     console.log("Iniciando sesión con:", username, password);
     setError(""); // Limpiar cualquier error previo
-    // Navegar al dashboard
-    window.location.href = "/dashboard";
+
+    // Navegar al dashboard usando React Router
+    navigate("/dashboard");
   };
 
   // También permitimos el envío del formulario para admitir la tecla Enter
