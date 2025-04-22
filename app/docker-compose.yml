@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  # Servicio de PostgreSQL
+  db:
+    image: postgres:15
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: uHuvOUXCRYFPDetUjVOmTQWaTPbRJDLP
+      POSTGRES_DB: railway
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - app-network
+
+  # Servicio de API Backend
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: api_backend
+    restart: always
+    environment:
+      - PORT=5173
+      - PGHOST=db
+      - PGPORT=5432
+      - PGDATABASE=railway
+      - PGUSER=postgres
+      - PGPASSWORD=uHuvOUXCRYFPDetUjVOmTQWaTPbRJDLP
+    ports:
+      - "5173:5173"
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: npm run dev:all
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  postgres_data:

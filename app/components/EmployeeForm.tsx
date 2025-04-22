@@ -76,7 +76,7 @@ const EmployeeForm: React.FC<EmployeeFormProps> = ({ employee, onSave, onCancel 
   
   return (
     <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
-      <div className="bg-[#2A3B3C] rounded-lg w-full max-w-2xl border border-yellow-500 shadow-xl">
+      <div className="bg-[#2A3B3C] rounded-lg w-full max-w-2xl border border-[#F5C563] shadow-xl">
         <div className="p-6 border-b border-gray-700">
           <h3 className="text-xl font-semibold text-white">
             {employee ? 'Editar Empleado' : 'Añadir Nuevo Empleado'}
@@ -95,7 +95,7 @@ const EmployeeForm: React.FC<EmployeeFormProps> = ({ employee, onSave, onCancel 
                 id="nombre"
                 value={formData.nombre}
                 onChange={handleChange}
-                className={`w-full bg-[#1A2526] border ${errors.nombre ? 'border-red-500' : 'border-gray-700'} rounded-md py-2 px-3 text-white focus:outline-none focus:ring-1 focus:ring-yellow-500`}
+                className={`w-full bg-[#1A2526] border ${errors.nombre ? 'border-red-500' : 'border-gray-700'} rounded-md py-2 px-3 text-white focus:outline-none focus:ring-1 focus:ring-[#F5C563]`}
               />
               {errors.nombre && <p className="mt-1 text-xs text-red-500">{errors.nombre}</p>}
             </div>
@@ -110,7 +110,7 @@ const EmployeeForm: React.FC<EmployeeFormProps> = ({ employee, onSave, onCancel 
                 id="email"
                 value={formData.email}
                 onChange={handleChange}
-                className={`w-full bg-[#1A2526] border ${errors.email ? 'border-red-500' : 'border-gray-700'} rounded-md py-2 px-3 text-white focus:outline-none focus:ring-1 focus:ring-yellow-500`}
+                className={`w-full bg-[#1A2526] border ${errors.email ? 'border-red-500' : 'border-gray-700'} rounded-md py-2 px-3 text-white focus:outline-none focus:ring-1 focus:ring-[#F5C563]`}
               />
               {errors.email && <p className="mt-1 text-xs text-red-500">{errors.email}</p>}
             </div>
@@ -125,7 +125,7 @@ const EmployeeForm: React.FC<EmployeeFormProps> = ({ employee, onSave, onCancel 
                 id="departamento"
                 value={formData.departamento}
                 onChange={handleChange}
-                className={`w-full bg-[#1A2526] border ${errors.departamento ? 'border-red-500' : 'border-gray-700'} rounded-md py-2 px-3 text-white focus:outline-none focus:ring-1 focus:ring-yellow-500`}
+                className={`w-full bg-[#1A2526] border ${errors.departamento ? 'border-red-500' : 'border-gray-700'} rounded-md py-2 px-3 text-white focus:outline-none focus:ring-1 focus:ring-[#F5C563]`}
               />
               {errors.departamento && <p className="mt-1 text-xs text-red-500">{errors.departamento}</p>}
             </div>
@@ -140,7 +140,7 @@ const EmployeeForm: React.FC<EmployeeFormProps> = ({ employee, onSave, onCancel 
                 id="cargo"
                 value={formData.cargo}
                 onChange={handleChange}
-                className={`w-full bg-[#1A2526] border ${errors.cargo ? 'border-red-500' : 'border-gray-700'} rounded-md py-2 px-3 text-white focus:outline-none focus:ring-1 focus:ring-yellow-500`}
+                className={`w-full bg-[#1A2526] border ${errors.cargo ? 'border-red-500' : 'border-gray-700'} rounded-md py-2 px-3 text-white focus:outline-none focus:ring-1 focus:ring-[#F5C563]`}
               />
               {errors.cargo && <p className="mt-1 text-xs text-red-500">{errors.cargo}</p>}
             </div>
@@ -155,7 +155,7 @@ const EmployeeForm: React.FC<EmployeeFormProps> = ({ employee, onSave, onCancel 
                 id="fecha_contratacion"
                 value={formData.fecha_contratacion}
                 onChange={handleChange}
-                className={`w-full bg-[#1A2526] border ${errors.fecha_contratacion ? 'border-red-500' : 'border-gray-700'} rounded-md py-2 px-3 text-white focus:outline-none focus:ring-1 focus:ring-yellow-500`}
+                className={`w-full bg-[#1A2526] border ${errors.fecha_contratacion ? 'border-red-500' : 'border-gray-700'} rounded-md py-2 px-3 text-white focus:outline-none focus:ring-1 focus:ring-[#F5C563]`}
               />
               {errors.fecha_contratacion && <p className="mt-1 text-xs text-red-500">{errors.fecha_contratacion}</p>}
             </div>
@@ -169,7 +169,7 @@ const EmployeeForm: React.FC<EmployeeFormProps> = ({ employee, onSave, onCancel 
                 id="estado"
                 value={formData.estado}
                 onChange={handleChange}
-                className="w-full bg-[#1A2526] border border-gray-700 rounded-md py-2 px-3 text-white focus:outline-none focus:ring-1 focus:ring-yellow-500"
+                className="w-full bg-[#1A2526] border border-gray-700 rounded-md py-2 px-3 text-white focus:outline-none focus:ring-1 focus:ring-[#F5C563]"
               >
                 <option value="Activo">Activo</option>
                 <option value="Inactivo">Inactivo</option>
@@ -189,7 +189,7 @@ const EmployeeForm: React.FC<EmployeeFormProps> = ({ employee, onSave, onCancel 
           <button
             type="button"
             onClick={handleSubmit}
-            className="px-4 py-2 bg-yellow-500 hover:bg-yellow-400 text-black font-bold rounded-md focus:outline-none"
+            className="px-4 py-2 bg-[#F5C563] hover:bg-yellow-400 text-black font-bold rounded-md focus:outline-none"
           >
             {employee ? 'Actualizar' : 'Guardar'}
           </button>

@@ -83,7 +83,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activePage, logo }) => {
   ];
 
   return (
-    <div className="w-64 border-r border-gray-800 flex flex-col">
+    <div className="w-64 border-r border-gray-800 flex flex-col bg-[#1A2526] h-full">
       {/* Logo */}
       <div className="p-4 border-b border-gray-800">
         <img src={logo} alt="BlackCode" className="h-8" />
@@ -92,7 +92,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activePage, logo }) => {
 
       {/* User profile */}
       <div className="flex flex-col items-center p-6 border-b border-gray-800">
-        <div className="w-24 h-24 rounded-full border-2 border-yellow-500 flex items-center justify-center mb-2">
+        <div className="w-24 h-24 rounded-full border-2 border-[#F5C563] flex items-center justify-center mb-2">
           <div className="w-20 h-20 rounded-full bg-gray-700 flex items-center justify-center">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
@@ -112,7 +112,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activePage, logo }) => {
                 onClick={() => navigate(item.path)}
                 className={`flex items-center px-6 py-3 w-full text-left
                   ${activePage === item.name 
-                    ? 'bg-gray-900 text-yellow-500' 
+                    ? 'bg-gray-900 text-[#F5C563]' 
                     : 'hover:bg-gray-900 text-gray-400 hover:text-white'}`}
               >
                 {item.icon}

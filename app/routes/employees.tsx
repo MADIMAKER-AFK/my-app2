@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-// Corregimos la importación de MetaFunction
 import type { MetaFunction } from "@react-router/node";
 import Sidebar from "../components/Sidebar";
 import EmployeeTable from "../components/EmployeeTable";
 import EmployeeForm from "../components/EmployeeForm";
 import AlertBanner from "../components/AlertBanner";
-import logoImage from "../welcome/wmblackcodeLong.png";
+import logoImage from "../welcome/wmblackcodeLong.js";
 
 export const meta: MetaFunction = () => {
   return [
@@ -42,6 +41,7 @@ export default function Employees() {
       }
       const data = await response.json();
       setEmployees(data);
+      setServerError(false);
     } catch (err) {
       console.error("Error al cargar empleados:", err);
       setError("No se pudieron cargar los empleados. Usando datos de respaldo.");
@@ -194,7 +194,7 @@ export default function Employees() {
   };
 
   return (
-    <div className="flex h-screen bg-black text-white">
+    <div className="flex h-screen bg-[#1A2526] text-white">
       <Sidebar activePage="empleados" logo={logoImage} />
       
       <div className="flex-1 overflow-y-auto">
@@ -222,7 +222,7 @@ export default function Employees() {
                 setCurrentEmployee(null);
                 setShowModal(true);
               }}
-              className="bg-yellow-500 hover:bg-yellow-400 text-black font-bold py-2 px-4 rounded flex items-center"
+              className="bg-[#F5C563] hover:bg-yellow-400 text-black font-bold py-2 px-4 rounded flex items-center"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clipRule="evenodd" />

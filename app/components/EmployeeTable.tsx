@@ -81,7 +81,7 @@ const EmployeeTable: React.FC<EmployeeTableProps> = ({ employees, onEdit, onDele
                   <div className="flex space-x-2">
                     <button
                       onClick={() => onEdit(employee)}
-                      className="text-yellow-500 hover:text-yellow-400"
+                      className="text-[#F5C563] hover:text-yellow-400"
                       title="Editar"
                     >
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
