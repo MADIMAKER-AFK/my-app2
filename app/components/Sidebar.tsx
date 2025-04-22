@@ -32,7 +32,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activePage, logo }) => {
     {
       name: 'asistencias',
       label: 'Asistencias',
-      path: '#',
+      path: '/asistencias',
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
@@ -42,7 +42,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activePage, logo }) => {
     {
       name: 'solicitudes',
       label: 'Solicitudes',
-      path: '#',
+      path: '/solicitudes',
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -52,7 +52,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activePage, logo }) => {
     {
       name: 'nomina',
       label: 'Nómina',
-      path: '#',
+      path: '/nomina',
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2" />
@@ -62,7 +62,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activePage, logo }) => {
     {
       name: 'documentos',
       label: 'Documentos',
-      path: '#',
+      path: '/documentos',
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
@@ -72,7 +72,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activePage, logo }) => {
     {
       name: 'configuracion',
       label: 'Configuración',
-      path: '#',
+      path: '/configuracion',
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
@@ -82,12 +82,18 @@ const Sidebar: React.FC<SidebarProps> = ({ activePage, logo }) => {
     }
   ];
 
+  // Función para manejar la navegación
+  const handleNavigation = (path: string) => {
+    console.log("Navegando a:", path); // Para depuración
+    navigate(path);
+  };
+
   return (
     <div className="w-64 border-r border-gray-800 flex flex-col bg-[#1A2526] h-full">
       {/* Logo */}
       <div className="p-4 border-b border-gray-800">
         <img src={logo} alt="BlackCode" className="h-8" />
-        <h1 className="text-xl font-semibold">Dashboard</h1>
+        <h1 className="text-xl font-semibold text-white">Dashboard</h1>
       </div>
 
       {/* User profile */}
@@ -99,7 +105,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activePage, logo }) => {
             </svg>
           </div>
         </div>
-        <h2 className="text-lg font-semibold">USERNAME</h2>
+        <h2 className="text-lg font-semibold text-white">USERNAME</h2>
         <p className="text-xs text-gray-400">username123@gmail.com</p>
       </div>
 
@@ -109,7 +115,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activePage, logo }) => {
           {menuItems.map((item) => (
             <li className="mb-1" key={item.name}>
               <button
-                onClick={() => navigate(item.path)}
+                onClick={() => handleNavigation(item.path)}
                 className={`flex items-center px-6 py-3 w-full text-left
                   ${activePage === item.name 
                     ? 'bg-gray-900 text-[#F5C563]' 

@@ -4,7 +4,7 @@ import Sidebar from "../components/Sidebar";
 import EmployeeTable from "../components/EmployeeTable";
 import EmployeeForm from "../components/EmployeeForm";
 import AlertBanner from "../components/AlertBanner";
-import logoImage from "../welcome/wmblackcodeLong.js";
+import logoImage from "../welcome/wmblackcodeLong.png";
 
 export const meta: MetaFunction = () => {
   return [
